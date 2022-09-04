@@ -20,3 +20,6 @@ player.setCurrentTime(secondsTime)
 
 player.on('timeupdate', throttle(timeVideo, 1000));
 
+
+
+
