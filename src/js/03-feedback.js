@@ -37,8 +37,10 @@ try {
 function ClearingFields(event) {
     event.preventDefault();
      
+    let JSONbaseInfo = localStorage.getItem("feedback-form-state")
+    let baseInfo = JSON.parse(JSONbaseInfo)
 
-    console.log(localStorage.getItem("feedback-form-state"))
+    console.log(baseInfo)
 
     formElement.reset()
     localStorage.removeItem("feedback-form-state");

@@ -9,16 +9,25 @@ const KEY_TIME_VIDEO = "videoplayer-current-time";
 const timeVideo = function(data) {
     let secondsJSON = JSON.stringify(data.seconds);
 
-    localStorage.setItem(KEY_TIME_VIDEO, secondsJSON), 1000
+    localStorage.setItem(KEY_TIME_VIDEO, secondsJSON)
 
 }
 
-let secondsTime = localStorage.getItem(KEY_TIME_VIDEO)
+let JSONsecondsTime = localStorage.getItem(KEY_TIME_VIDEO);
 
-player.setCurrentTime(secondsTime)
+      
+
+if (JSONsecondsTime !== null) {
+
+    player.setCurrentTime(JSONsecondsTime);
+}
 
 
-player.on('timeupdate', throttle(timeVideo, 1000));
+    player.on('timeupdate', throttle(timeVideo, 1000));
+
+
+
+
 
 
 
